@@ -49,7 +49,7 @@ export default function CommentForm({
     >
       <div className='bg-gray-100 border rounded-t-md shadow-sm'>
         <fieldset className='flex flex-col justify-center mx-auto' aria-live='polite'>
-          <FormTextarea<CommentInput> name='body' placeholder='Write a comment...' rows={3} clear />
+          <FormTextarea<CommentInput> name='body' placeholder='Write a comment...' rows={3} clear data-testId='comment-input'/>
 
           <div className='py-2 px-4 '>
             <div className='flex flex-wrap items-center justify-between mx-auto'>

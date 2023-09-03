@@ -66,9 +66,9 @@ export default function CommentSection({ article }: { article: ArticleViewFragme
           )}
           {loading && <LoadingSpinner />}
 
-          <ul className='mt-4'>
+          <ul className='mt-4' data-testId='comment-list'>
             {data?.comments.map((comment) => (
-              <li key={comment.id}>
+              <li key={comment.id} data-testId='comment'>
                 <ArticleComment comment={comment} />
               </li>
             ))}

@@ -10,7 +10,7 @@ type TagListProps = {
 
 export default function TagList({ tagList, withLink, outlined, size, onRemoveItem, className }: TagListProps) {
   return (
-    <ul className={`flex flex-wrap ${className}`}>
+    <ul className={`flex flex-wrap ${className}`} data-testId='tag-list'>
       {tagList.map((value, index) => (
         <li key={value} onClick={onRemoveItem && (() => onRemoveItem(index))}>
           <Tag {...{ size, outlined }}>

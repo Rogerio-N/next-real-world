@@ -74,7 +74,7 @@ export default function CustomLink({
   const active = decodeURIComponent(asPath) === decodeURIComponent(href as string);
   return (
     <Link href={href} {...props}>
-      <a className={joinLinkStyles({ mode, underlined, className }, active)}>{children}</a>
+      <a className={joinLinkStyles({ mode, underlined, className }, active)} data-testId='article-redirect'>{children}</a>
     </Link>
   );
 }

@@ -17,7 +17,7 @@ export default function ArticleList({ articles, loading }: ArticleListProps) {
       {message && message.mode === 'alert' ? (
         <Alert />
       ) : (
-        <ul className='divide-y divider-gray-200'>
+        <ul className='divide-y divider-gray-200' data-testId='article-list'>
           {articles?.map((article, index) => (
             <li key={article.slug}>
               <ArticlePreview article={article} />
