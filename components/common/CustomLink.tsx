@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { joinStylesFromArray } from '../../lib/utils/styles-builder';
 
-export type LinkType = 'none' | 'primary' | 'secondary' | 'reverse' | 'nav' | 'tab' | 'tag';
+export type LinkType = 'none' | 'primary' | 'secondary' | 'reverse' | 'nav' | 'tab' | 'tag' | 'article';
 type LinkPattern = 'basic' | 'hover' | 'active';
 
 export type CustomLinkProps = Partial<{
@@ -47,6 +47,7 @@ const linkTypeConfig: { [key in LinkType]: Partial<{ [key in LinkPattern]: strin
     basic: 'text-gray-100',
     hover: 'hover:text-white',
   },
+  article: {},
 };
 
 const joinLinkStyles = (
@@ -72,9 +73,11 @@ export default function CustomLink({
 }: CustomLinkProps) {
   const { asPath } = useRouter();
   const active = decodeURIComponent(asPath) === decodeURIComponent(href as string);
+  const testId = mode == 'none' ? 'default-redirect' : `${mode}-redirect`
+
   return (
     <Link href={href} {...props}>
-      <a className={joinLinkStyles({ mode, underlined, className }, active)} data-testId='article-redirect'>{children}</a>
+      <a className={joinLinkStyles({ mode, underlined, className }, active)} data-testId={testId}>{children}</a>
     </Link>
   );
 }

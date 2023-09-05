@@ -14,7 +14,7 @@ export function ArticlePreview({ article }: { article: ArticlePreviewFragment })
         <ArticleAuthorInfo authorInfo={authorInfo} />
         <FavoritesButton className='' article={article} />
       </div>
-      <CustomLink href={`/article/${slug}`} className='flex flex-col pb-2'>
+      <CustomLink href={`/article/${slug}`} className='flex flex-col pb-2' mode='article'>
         <h1 className='text-2xl font-semibold'>{title}</h1>
         <p className='text-lg font-thin text-gray-400'>{description}</p>
         <div className='flex flex-wrap justify-between items-center mt-4'>
