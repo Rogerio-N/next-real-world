@@ -42,6 +42,7 @@ export default function FollowsButton({ author, className }: FollowsButtonProps)
       className={className}
       onClick={onFollowToggle}
       disabled={followLoading || unFollowLoading}
+      data-testid='follow-button'
     >
       {following ? (
         <>

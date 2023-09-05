@@ -59,6 +59,7 @@ export default function FavoritesButton({ article, className, text }: FavoritesB
       aria-label='Toggle Favorite'
       disabled={favoriteLoading || unfavoriteLoading}
       onClick={onFavoriteToggle}
+      data-testid='favorite-button'
     >
       <i className='ion-heart'></i>
       {text ? (

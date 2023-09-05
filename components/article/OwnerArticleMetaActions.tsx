@@ -27,11 +27,11 @@ export default function OwnerArticleMetaActions({ article }: { article: ArticleV
 
   return (
     <div className='flex space-x-2'>
-      <CustomButton size='s' color='secondary' outlined onClick={() => router.push(`/editor/${slug}`)}>
+      <CustomButton size='s' color='secondary' outlined onClick={() => router.push(`/editor/${slug}`)} data-testid='edit-button'>
         <i className='ion-edit'></i>
         &nbsp; Edit
       </CustomButton>
-      <CustomButton size='s' color='danger' outlined disabled={loading} onClick={() => onDeleteArticle()}>
+      <CustomButton size='s' color='danger' outlined disabled={loading} onClick={() => onDeleteArticle()} data-testid='delete-button'>
         <i className='ion-trash-a'></i>
         &nbsp; Delete
       </CustomButton>
