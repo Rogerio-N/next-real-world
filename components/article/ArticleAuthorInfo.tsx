@@ -16,7 +16,7 @@ interface ArticleAuthorInfoProps {
 export default function ArticleAuthorInfo({ inlined = false, dark = false, authorInfo }: ArticleAuthorInfoProps) {
   const { username, image, createdAt } = authorInfo;
   return (
-    <div className={`flex flex-wrap ${inlined ? 'items-center' : 'items-end'}`}>
+    <div className={`flex flex-wrap ${inlined ? 'items-center' : 'items-end'}`} data-testid='author-info'>
       <CustomLink href={`/profile/${username}`}>
         <CustomImage src={image} alt={username} />
       </CustomLink>
